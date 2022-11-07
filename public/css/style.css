@@ -1,0 +1,27 @@
+.container label {
+    width: 66px;
+    display: inline-block;
+}
+
+.container fieldset > * {
+    margin: 5px 0;
+}
+
+.container table img {
+    width: 20px;
+    margin-left: 15px;
+}
+
+main {
+    width: 265px;
+    margin-top: 100px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#listar {
+    width: 500px;
+}

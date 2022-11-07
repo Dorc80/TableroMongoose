@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Leon</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <main class="container">
+
+        <form action="/leones/<%= animal.id %>" method="post">
+            <fieldset>
+                <legend>Modificar Leon</legend>
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input id="name" name="name" type="text" value="<%= animal.name %>">
+                </div>
+                <div>
+                    <label for="weight">Peso:</label>
+                    <input id="weight" name="weight" type="text" value="<%= animal.weight %>">
+                </div>
+                <div>
+                    <label for="age">Edad:</label>
+                    <input id="age" name="age" type="text" value="<%= animal.age %>">
+                </div>
+                <div>
+                    <label for="gender">Sexo:</label>
+                    <select id="gender" name="gender" id="gender">
+                        <option value="Masculino" <% if(animal.gender == 'Masculino') { %>selected<% } %>>Masculino</option>
+                        <option value="Femenino" <% if(animal.gender == 'Femenino') { %>selected<% } %>>Femenino</option>
+                    </select>
+                </div>
+                <button>Enviar</button>
+
+
+                <div id="modificado">
+                    <% if(modificado) { %>
+                        <h2>Leon ha sido modificado</h2>
+                    <% } %>
+                </div>
+
+            </fieldset>
+        </form>
+
+        <br><br>
+        <div>
+            <ul>
+                <li><a href="/">Listar</a></li>
+            </ul>
+        </div>
+
+    </main>
+
+    <script src="/js/editar.js"></script>
+
+</body>
+</html>

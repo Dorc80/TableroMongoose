@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Mongoose</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <main id="listar" class="container">
+        <h1>Leones</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Detalle</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% for (var i in animals) { %>
+                    <tr>
+                        <td><%= animals[i].name %></td>
+                        <td><%= animals[i].age %> años</td>
+                        <td><a href="/leones/<%= animals[i]._id %>"><img src="/images/lupa.svg" alt="detalle"></a></td>
+                        <td><a href="/leones/editar/<%= animals[i]._id %>"><img src="/images/editar.png" alt="editar"></a></td>
+                        <td><img src="/images/eliminar.png" class="eliminar" alt="eliminar" id="<%= animals[i]._id %>"></td>
+                    </tr>
+                <% } %>
+
+            </tbody>
+        </table>
+
+        <br><br>
+        <div>
+            <ul>
+                <li><a href="/leones/nuevo">Crear</a></li>
+            </ul>
+        </div>
+
+        <!-- cambio actions por js -->
+        <form id="eliminarForm" action="" method="post">
+            
+        </form>
+
+    </main>
+
+    <script src="/js/script.js"></script>
+
+</body>
+</html>
